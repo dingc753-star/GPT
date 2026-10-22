@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "name_en": "RobotFleetPM",
+    "title": "물류 로봇 군단의 지휘관",
+    "job": "AMR/AGV project manager",
+    "class": "Tactician Commander",
+    "palette": "deep navy, safety orange, cyan holographic accents",
+    "scene": "standing on a raised catwalk above a smart warehouse, directing a fleet of autonomous mobile robots with a holographic Gantt-chart gauntlet"
+  },
+  {
+    "id": 2,
+    "name_en": "FieldEngineer",
+    "title": "현장의 수호 기사",
+    "job": "field service engineer",
+    "class": "Paladin",
+    "palette": "gunmetal grey, hi-vis yellow, warm white light",
+    "scene": "kneeling beside a robot with an open chassis, glowing diagnostic wrench in hand, sparks drifting in a factory at night"
+  },
+  {
+    "id": 3,
+    "name_en": "SoftwareDeveloper",
+    "title": "코드의 마법사",
+    "job": "software developer",
+    "class": "Arcane Mage",
+    "palette": "midnight purple, neon green code glyphs, soft magenta rim light",
+    "scene": "floating lines of glowing code orbit around them like spell circles in a dim server room"
+  },
+  {
+    "id": 4,
+    "name_en": "Nurse",
+    "title": "생명의 치유사",
+    "job": "emergency room nurse",
+    "class": "Cleric Healer",
+    "palette": "clean white, mint teal, soft gold healing glow",
+    "scene": "in a futuristic hospital corridor, holding a medical scanner emitting a gentle healing aura"
+  },
+  {
+    "id": 5,
+    "name_en": "Firefighter",
+    "title": "화염을 가르는 방패",
+    "job": "firefighter",
+    "class": "Guardian Tank",
+    "palette": "crimson red, charcoal black, ember orange",
+    "scene": "walking out of a burning high-rise with a glowing energy-shield fire hose, smoke and embers swirling"
+  },
+  {
+    "id": 6,
+    "name_en": "Chef",
+    "title": "불꽃의 연금술사",
+    "job": "head chef",
+    "class": "Alchemist",
+    "palette": "copper, cream white, flame orange",
+    "scene": "in a high-tech kitchen, flipping a wok as flames form alchemical runes in the air"
+  },
+  {
+    "id": 7,
+    "name_en": "DeliveryRider",
+    "title": "도시의 질주자",
+    "job": "delivery rider",
+    "class": "Rogue Scout",
+    "palette": "electric blue, black, neon pink city reflections",
+    "scene": "leaning on a hover-scooter on a rain-soaked neon street, delivery box glowing on the back"
+  },
+  {
+    "id": 8,
+    "name_en": "Teacher",
+    "title": "지혜의 현자",
+    "job": "elementary school teacher",
+    "class": "Sage",
+    "palette": "warm beige, forest green, golden sunlight",
+    "scene": "in a bright classroom with holographic books and floating constellations above their open palm"
+  },
+  {
+    "id": 9,
+    "name_en": "PoliceOfficer",
+    "title": "질서의 집행관",
+    "job": "police officer",
+    "class": "Lawbringer Knight",
+    "palette": "royal blue, silver, red-blue strobe light",
+    "scene": "standing at a futuristic intersection at night, drone companion hovering above, light baton at the ready"
+  },
+  {
+    "id": 10,
+    "name_en": "Farmer",
+    "title": "대지의 드루이드",
+    "job": "smart-farm farmer",
+    "class": "Druid",
+    "palette": "leaf green, earth brown, sunrise gold",
+    "scene": "in a vertical hydroponic farm at sunrise, vines and sensor drones responding to their gestures"
+  },
+  {
+    "id": 11,
+    "name_en": "Accountant",
+    "title": "숫자의 점성술사",
+    "job": "accountant",
+    "class": "Numeric Seer",
+    "palette": "ivory, emerald, gold ledger glow",
+    "scene": "surrounded by floating holographic spreadsheets and coins in an elegant glass office"
+  },
+  {
+    "id": 12,
+    "name_en": "Designer",
+    "title": "색채의 환술사",
+    "job": "graphic designer",
+    "class": "Illusionist",
+    "palette": "pastel rainbow, white, iridescent highlights",
+    "scene": "painting light ribbons in mid-air with a stylus, color swatches orbiting them in a sunlit studio"
+  },
+  {
+    "id": 13,
+    "name_en": "Salesperson",
+    "title": "언변의 음유시인",
+    "job": "B2B sales manager",
+    "class": "Bard",
+    "palette": "charcoal suit, burgundy, warm spotlight amber",
+    "scene": "on a trade-show stage presenting a robot product, holographic charts rising like music notes"
+  },
+  {
+    "id": 14,
+    "name_en": "Pilot",
+    "title": "창공의 기병",
+    "job": "airline pilot",
+    "class": "Sky Lancer",
+    "palette": "navy, white, sunset orange sky",
+    "scene": "on a futuristic airport apron at golden hour, a sleek aircraft behind them, holding a flight helmet"
+  },
+  {
+    "id": 15,
+    "name_en": "Lawyer",
+    "title": "논리의 결투가",
+    "job": "lawyer",
+    "class": "Duelist",
+    "palette": "black, white, scarlet accent, cold marble light",
+    "scene": "in a grand courtroom of glass and marble, holding a glowing contract like a rapier"
+  },
+  {
+    "id": 16,
+    "name_en": "Barista",
+    "title": "향기의 정령사",
+    "job": "barista",
+    "class": "Elementalist",
+    "palette": "espresso brown, cream, soft steam blue",
+    "scene": "in a cozy cyber café, coffee steam swirling into spirit-like forms above a latte cup"
+  },
+  {
+    "id": 17,
+    "name_en": "Mechanic",
+    "title": "강철의 대장장이",
+    "job": "auto mechanic",
+    "class": "Blacksmith Artificer",
+    "palette": "oil black, steel blue, molten orange",
+    "scene": "in a garage workshop, lifting a glowing engine part with a mechanical exoskeleton arm"
+  },
+  {
+    "id": 18,
+    "name_en": "YouTuber",
+    "title": "관심의 소환사",
+    "job": "content creator",
+    "class": "Summoner",
+    "palette": "hot pink, violet, cyan ring light",
+    "scene": "in a home studio, summoning floating camera drones and glowing heart icons around them"
+  }
+]

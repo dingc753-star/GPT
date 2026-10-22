@@ -9,7 +9,7 @@ import argparse
 import html
 from pathlib import Path
 
-from generate import ROOT, build_prompt, load_characters, load_style, output_path
+from generate import REFERENCE_INSTRUCTION, ROOT, build_prompt, load_characters, load_style, output_path
 
 OUTPUT = ROOT / "prompts.html"
 
@@ -87,6 +87,15 @@ CARD = """<div class="card" data-id="{id}">
 # ChatGPT 웹은 크기 파라미터가 없으므로 문장으로 요청
 WEB_PREFIX = "Generate one image, portrait 2:3 aspect ratio.\n"
 
+# 한 채팅방에서 "다음"만 입력하며 순서대로 진행하는 세션 메시지
+SESSION_HEAD = (
+    "We will create a series of {count} character card illustrations, one image per turn, in the order below.\n"
+    "Rules: portrait 2:3 aspect ratio, keep the exact same art style across the whole series, "
+    "one image per reply, no text in the reply other than the number.\n"
+    "Common style: {style}\n"
+    "{reference}Generate #{first} now. Each time I reply \"next\", generate the next one in the list.\n"
+)
+
 
 def main():
     p = argparse.ArgumentParser(description="ChatGPT 웹용 프롬프트 모음(prompts.html) 생성")
@@ -106,8 +115,19 @@ def main():
         prompt=html.escape(WEB_PREFIX + build_prompt(c, style, args.reference)),
     ) for c in chars]
 
-    OUTPUT.write_text(PAGE.format(count=len(cards), cards="\n".join(cards)), encoding="utf-8")
-    print(f"{OUTPUT.name} 생성 완료 ({len(cards)}개) - 브라우저로 열어서 사용하세요")
+    session = SESSION_HEAD.format(count=len(chars), style=style,
+                                   reference=REFERENCE_INSTRUCTION + "\n" if args.reference else "", first=f"{chars[0]['id']:02d}") if chars else ""
+    for c in chars:
+        body = build_prompt(c, "").strip()
+        session += f"\n#{c['id']:02d}\n{body}\n"
+    cards.insert(0, CARD.format(
+        id="all", no="ALL", title="한 채팅방에서 순서대로 진행 (권장)",
+        file="이걸 붙여넣고 이후엔 &quot;next&quot;만 입력",
+        prompt=html.escape(session),
+    ))
+
+    OUTPUT.write_text(PAGE.format(count=len(chars), cards="\n".join(cards)), encoding="utf-8")
+    print(f"{OUTPUT.name} 생성 완료 ({len(chars)}개 + 일괄 진행 메시지) - 브라우저로 열어서 사용하세요")
 
 
 if __name__ == "__main__":

@@ -75,7 +75,8 @@ python prompt_pack.py
 python prompt_pack.py --only 1 2          # 테스트용 2개만
 python prompt_pack.py --reference         # 기준 이미지를 채팅에 첨부할 때 (화풍 참고 지시문 포함)
 
-# 2) chatgpt.com에서 번호 순서대로 [복사] -> 붙여넣기 -> 이미지 다운로드
+# 2) chatgpt.com 새 채팅에 맨 위 [ALL] 카드를 붙여넣기 -> 이미지가 나오면 다운로드 후 "next" 입력 반복
+#    (특정 캐릭터만 다시 만들 때는 개별 카드를 복사)
 
 # 3) 다운로드 폴더의 이미지를 받은 순서대로 아직 없는 번호에 배정
 python import_images.py ~/Downloads --since 30           # 최근 30분 파일 미리보기

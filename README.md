@@ -9,6 +9,8 @@
 | `characters.json` | 캐릭터 목록 (`id`, `name_en`, `title`, `job`, `class`, `palette`, `scene`) |
 | `style.txt` | 모든 캐릭터에 공통으로 붙는 스타일 문장 |
 | `generate.py` | 이미지 생성 스크립트 |
+| `prompt_pack.py` | ChatGPT 웹용 복사 버튼 프롬프트 모음 `prompts.html` 생성 |
+| `import_images.py` | 다운로드한 이미지를 도감 파일명으로 정리 |
 | `gallery.py` | `images/`를 카드 그리드로 보여주는 `gallery.html` 생성 |
 | `images/` | 생성 결과 (`{id:02d}_{name_en}.png`) |
 | `logs/` | 실행별 로그 (`generate_YYYYMMDD_HHMMSS.jsonl`: 시각, 프롬프트, 결과) |
@@ -62,6 +64,31 @@ python gallery.py
 - 실패하면 최대 3회까지 재시도합니다 (재시도 대기 5초, 10초).
 - `--reference` 모드에서는 프롬프트 맨 앞에 "참고 이미지는 화풍만 따르고 캐릭터·포즈·구도는 따라 하지 말 것" 지시를 붙입니다.
 - 모든 시도(성공/실패)는 `logs/`에 JSON Lines 형식으로 기록됩니다.
+
+## API 없이 ChatGPT 웹으로 만들기 (반자동)
+
+API 키 없이 ChatGPT 구독(웹)으로 생성하는 방법입니다. 복사·붙여넣기와 다운로드는 직접 하고, 프롬프트 조립과 파일 정리는 스크립트가 맡습니다.
+
+```bash
+# 1) 복사 버튼이 달린 프롬프트 모음 만들기 -> prompts.html을 브라우저로 열기
+python prompt_pack.py
+python prompt_pack.py --only 1 2          # 테스트용 2개만
+python prompt_pack.py --reference         # 기준 이미지를 채팅에 첨부할 때 (화풍 참고 지시문 포함)
+
+# 2) chatgpt.com에서 번호 순서대로 [복사] -> 붙여넣기 -> 이미지 다운로드
+
+# 3) 다운로드 폴더의 이미지를 받은 순서대로 아직 없는 번호에 배정
+python import_images.py ~/Downloads --since 30           # 최근 30분 파일 미리보기
+python import_images.py ~/Downloads --since 30 --apply   # 실제 복사
+python import_images.py ~/Downloads/xxx.png --id 5 --apply   # 한 장을 특정 번호로 지정 (덮어씀)
+
+# 4) 갤러리 갱신
+python gallery.py
+```
+
+- 화풍을 맞추려면 한 채팅방에서 이어서 생성하거나, 마음에 드는 첫 장을 매번 첨부하세요.
+- PNG가 아닌 파일(webp 등)을 변환하려면 `pip install pillow`가 필요합니다.
+- ChatGPT 웹 화면을 스크립트로 자동 조작하는 것은 OpenAI 이용약관(자동화된 출력 추출 금지)에 어긋날 수 있어 넣지 않았습니다. 완전 자동이 필요하면 위의 API 방식을 쓰세요.
 
 ## 비용 팁
 
